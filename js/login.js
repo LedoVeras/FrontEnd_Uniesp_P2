@@ -1,7 +1,7 @@
 
 //volta para a tela inicial caso na memória ele esteja logado
 if(currentAccount != null) {
-    window.location.href = "index.html";
+    logoutAccount()
 }
 
 
@@ -57,3 +57,9 @@ function loginAccount()
         alert("Conta não encontrada");
     }
 }
+
+
+function logoutAccount(){
+    setCurrentAccount(null);
+}
+

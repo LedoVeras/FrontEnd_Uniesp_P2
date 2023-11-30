@@ -1,9 +1,10 @@
 
 //volta para a tela inicial caso na memória ele esteja logado
 if(currentAccount == null) {
-    alert("você precisa estar logado para acessar contatos")
+    alert("você precisa estar logado para acessar os contatos")
     window.location.href = "login.html";
 }
+
 
 var contatos = []
 var data = localStorage.getItem('contatos')
@@ -12,6 +13,13 @@ if (data) {
     contatos = JSON.parse(data);
 }
 
+console.log(data, contatos)
+
+if (document.getElementById("tabela") != null) {
+    contatos.forEach(element => {
+        adicionarLinha(element)
+    });
+}
 
 $(document).ready(function() {
     $("#contactForm").submit(function(event) {
@@ -49,18 +57,19 @@ function createContact()
 
 
 // Função para adicionar uma nova linha à tabela
-function adicionarLinha(nome, email, contato) {
-  var tabela = $("#tabela").getElementsByTagName('tbody')[0];
-  var novaLinha = tabela.insertRow(tabela.rows.length);
+function adicionarLinha(element) {
+    var tabela = document.getElementById("tabela").getElementsByTagName('tbody')[0];
+    var novaLinha = tabela.insertRow(tabela.rows.length);
   
   var celulaNome = novaLinha.insertCell(0);
   var celulaEmail = novaLinha.insertCell(1);
   var celulaContato = novaLinha.insertCell(2);
   
   // Adiciona os dados às células
-  celulaNome.innerHTML = nome;
-  celulaEmail.innerHTML = email;
-  celulaContato.innerHTML = contato;
+  celulaNome.innerHTML = element["nome"];
+  celulaEmail.innerHTML = element["email"];
+  //celulaContato.innerHTML = element["contactText"];
+  celulaContato.innerHTML = element["contactText"].substring(0, 70)
 }
 
 

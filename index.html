@@ -11,19 +11,33 @@
 
 <body>
 
-    <h1>Index</h1>
-    <h1>Index</h1>
-    <h1>Index</h1>
-    <h1>Index</h1>
-    <h1>Index</h1>
-    <h1>Index</h1>
-    <h1>Index</h1>
+   
+    <div id="container">
 
+        <div class="navbar">
+            <a href="contato.html">Contato</a>
+            <a href="admin.html">Admin</a>
+            <a href="login.html" id="loginLogout" href="#"></a>
+          </div>
 
-    <button type="button" id="logout">Logout</button>
+        <h1>Página Principal</h1>
+
+        <h2> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, molestiae a velit illo ipsum vero exercitationem mollitia labore dolores, nemo, fugit quasi accusamus. Nam molestiae, earum doloremque labore ad nemo. </h2>
+    </div>  
     
     <script src="js/DBControl.js"></script>
-    <script src="js/script.js"></script>
+
+    <script>
+        var loginLogoutLink = document.getElementById("loginLogout");
+    
+        if (currentAccount === null) {
+          // Se a conta for nula, exibe "Login"
+          loginLogoutLink.innerHTML = "Login";
+        } else {
+          // Se a conta não for nula, exibe "Logout"
+          loginLogoutLink.innerHTML = "Logout";
+        }
+      </script>
 
 </body>
 

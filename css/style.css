@@ -10,8 +10,12 @@ input{
     border-top: 1px;
     border-left: none;
     border-right:none;
+    margin-bottom: 30px;
+    height: 30px;
+    width: 60%;
 }
-#form{
+
+#form {
 
     max-width: 500px;
 
@@ -54,9 +58,27 @@ form > label {
     height:75%;
     text-align: center;
     font-size:25px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 
     cursor: pointer;
 }
+
+#trocarCadLog {
+    text-decoration: none;
+    color: black;
+    padding: 0 15px; /* Aumenta o espaçamento dos links */
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    cursor: pointer;
+  }
+
+#trocarCadLog:hover {
+  color: white;
+  background-color: black;
+}
+
+
+
 
 button:hover{
     background-color: #FA8BFF;
@@ -101,3 +123,87 @@ select{
     padding:5px;
     border:none;
 }
+
+#container {
+  max-width: 1000px;
+  background-color: white;
+  margin: auto;
+  padding: 40px 0 100px 0;
+  border-radius: 10px;
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+#tabela-container {
+  display: inline-block;
+  text-align: left; /* Mantém o texto alinhado à esquerda dentro da div */
+  margin: auto; /* Adicionado para centralizar a tabela */
+  width: 90%;
+}
+
+table {
+  width: 100%; /* Ajustado para 100% para ocupar a largura total da #tabela-container */
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+th:nth-child(1), td:nth-child(1),
+th:nth-child(2), td:nth-child(2) {
+  width: 1%;
+}
+th:nth-child(3), td:nth-child(3) {
+  width: 3%;
+}
+tbody tr {
+  margin-bottom: 30px;
+}
+tbody tr:last-child {
+  border-bottom: 2px solid #ddd;
+}
+
+
+
+/* Estilos da Navbar */
+.navbar {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 0;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: black;
+    padding: 0 15px; /* Aumenta o espaçamento dos links */
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    cursor: pointer;
+    position: relative;
+  }
+
+  .navbar a:hover {
+    color: white;
+    background-color: black;
+
+  }
+
+  .navbar a:not(:last-child) {
+    position: relative;
+  }
+
+  .navbar a:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: black;
+    right: -1px;
+    top: 0;
+  }
