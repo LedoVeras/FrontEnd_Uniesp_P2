@@ -13,8 +13,6 @@ if (data) {
     contatos = JSON.parse(data);
 }
 
-console.log(data, contatos)
-
 if (document.getElementById("tabela") != null) {
     contatos.forEach(element => {
         adicionarLinha(element)
@@ -22,10 +20,11 @@ if (document.getElementById("tabela") != null) {
 }
 
 $(document).ready(function() {
-    $("#contactForm").submit(function(event) {
+    $("#form").submit(function(event) {
         event.preventDefault();
 
         createContact();
+        document.getElementById("contact").value = "";
     });
 });
 
